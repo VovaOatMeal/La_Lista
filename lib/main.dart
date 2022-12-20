@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:la_lista/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,8 +10,11 @@ class MyApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return const MaterialApp(
+      initialRoute: RouteGenerator.homePage,
+      onGenerateRoute: RouteGenerator.generateRoute,
+      title: "La Lista",
+    );
   }
 
 }
