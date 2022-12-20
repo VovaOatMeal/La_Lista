@@ -1,7 +1,10 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
-import 'abstr_standard_tile.dart';
+import 'abstr_tile.dart';
 
+/// A model class that describes standard tile with [title], [description],
+/// [leadingIcon] and [trailingIcon].
+///
 class StandardTile implements Tile {
   @override
   final String title;
@@ -11,6 +14,4 @@ class StandardTile implements Tile {
 
   StandardTile(this.title,
       {this.description, this.leadingIcon, this.trailingIcon});
-
-  
 }
