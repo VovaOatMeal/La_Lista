@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:la_lista/models/standard_tile.dart';
 
 import '../controllers/list_filler.dart';
 
@@ -15,9 +16,9 @@ class StandardListViewPage extends StatefulWidget {
 }
 
 class _StandardListViewPageState extends State<StandardListViewPage> {
-  final data = ListFiller.generateData(ListType.standardList);
   // * for testing performance
   final dataTest = ListFiller.data;
+  final moreData = [...ListFiller.data, ...ListFiller.data, ...ListFiller.data, ...ListFiller.data];
 
   @override
   Widget build(BuildContext context) {
@@ -25,23 +26,10 @@ class _StandardListViewPageState extends State<StandardListViewPage> {
       appBar: AppBar(
         title: Text(widget._appTitle),
       ),
-      // * 0. Old Approach
-      /*body: ListView.builder(
-        itemCount: data.length,
-        itemBuilder: (context, index) {
-          return data[index];
-        },
-      ),*/
-      // * 1. Simple Approach
-      /*body: ListView(
-        children: data,
-      ),*/
-      // * 2. More complex and probably best approach in
-      // * such cases (when using list building on demand)
       body: ListView.builder(
-        itemCount: dataTest.length,
+        itemCount: moreData.length,
         itemBuilder: (context, index) {
-          return ListFiller.tileBuilder(ListType.standardList, index);
+          return StandardTile.tileBuilder(index, moreData);
         },
       ),
     );

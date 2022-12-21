@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/standard_tile.dart';
 
-/// Used to fill different types of lists specified in [ListType].
-///
-/// [generateData] is used to create predefined list of [ListTile] that is filled
-/// using [StandardTile]. Fills only lists specified in [ListType].
+/// For now just holds the data needed in the program.
 ///
 abstract class ListFiller {
   static final data = <StandardTile>[
@@ -66,69 +63,4 @@ abstract class ListFiller {
     StandardTile("Timpani"),
     StandardTile("Drum Kit"),
   ];
-
-  // TODO: make possible to show trailing icon (e.g. "more" arrow) when description is big and overflow
-  static List<ListTile> generateData(ListType listType) {
-    List<ListTile> listOfTiles = [];
-
-    switch (listType) {
-      case ListType.standardList:
-        {
-          for (var entry in data) {
-            listOfTiles.add(
-              ListTile(
-                title: Text(entry.title),
-                subtitle: entry.description == null
-                    ? null
-                    : Text(entry.description.toString()),
-                leading: entry.leadingIcon,
-                trailing: entry.trailingIcon,
-              ),
-            );
-          }
-          return listOfTiles;
-        }
-
-      case ListType.gridView:
-        // TODO: Handle gridView filling.
-        break;
-      case ListType.expandableList:
-        // TODO: Handle expandableList filling.
-        break;
-    }
-
-    return listOfTiles;
-  }
-
-  // * for testing performance
-  static ListTile tileBuilder(ListType listType, int index) {
-    switch (listType) {
-      case ListType.standardList:
-        {
-          return ListTile(
-            title: Text(data[index].title),
-            subtitle: data[index].description == null
-                ? null
-                : Text(data[index].description.toString()),
-            leading: data[index].leadingIcon,
-            trailing: data[index].trailingIcon,
-          );
-        }
-
-      case ListType.gridView:
-        // TODO: Handle gridView filling.
-        break;
-      case ListType.expandableList:
-        // TODO: Handle expandableList filling.
-        break;
-    }
-
-    return const ListTile();
-  }
-}
-
-enum ListType {
-  standardList,
-  gridView,
-  expandableList,
 }
