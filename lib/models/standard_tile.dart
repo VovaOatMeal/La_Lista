@@ -17,16 +17,16 @@ class StandardTile implements Tile {
       {this.description, this.leadingIcon, this.trailingIcon});
 
   // TODO: make possible to show trailing icon (e.g. "more" arrow) when description is big and overflow
-  static ListTile tileBuilder(int index, List<StandardTile> dataList) {
-    final data = dataList;
+  static ListTile tileBuilder(StandardTile data,
+      void Function(StandardTile data) onTapCallback) {
 
     return ListTile(
-      title: Text(data[index].title),
-      subtitle: data[index].description == null
-          ? null
-          : Text(data[index].description.toString()),
-      leading: data[index].leadingIcon,
-      trailing: data[index].trailingIcon,
+      title: Text(data.title),
+      subtitle:
+          data.description == null ? null : Text(data.description.toString()),
+      leading: data.leadingIcon,
+      trailing: data.trailingIcon,
+      onTap: () => onTapCallback(data),
     );
   }
 }

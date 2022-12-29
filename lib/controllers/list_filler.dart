@@ -52,7 +52,7 @@ abstract class ListFiller {
     StandardTile("Brass Section"),
     StandardTile(
       "Flute",
-      description: "WHat a lovely wind instrument!",
+      description: "What a lovely wind instrument!",
     ),
     StandardTile("Vibraphone"),
     StandardTile("Marimba"),

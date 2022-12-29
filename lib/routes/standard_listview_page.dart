@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:la_lista/models/standard_tile.dart';
+import 'package:la_lista/routes.dart';
 
 import '../controllers/list_filler.dart';
 
@@ -18,7 +19,17 @@ class StandardListViewPage extends StatefulWidget {
 class _StandardListViewPageState extends State<StandardListViewPage> {
   // * for testing performance
   final dataTest = ListFiller.data;
-  final moreData = [...ListFiller.data, ...ListFiller.data, ...ListFiller.data, ...ListFiller.data];
+  final moreData = [
+    ...ListFiller.data,
+    ...ListFiller.data,
+    ...ListFiller.data,
+    ...ListFiller.data
+  ];
+
+  void _openDetails(StandardTile data) {
+    Navigator.of(context)
+        .pushNamed(RouteGenerator.detailsPage, arguments: data);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +40,8 @@ class _StandardListViewPageState extends State<StandardListViewPage> {
       body: ListView.builder(
         itemCount: moreData.length,
         itemBuilder: (context, index) {
-          return StandardTile.tileBuilder(index, moreData);
+          return StandardTile.tileBuilder(
+              moreData[index], _openDetails);
         },
       ),
     );
