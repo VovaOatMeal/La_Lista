@@ -2,15 +2,26 @@
 
 A simple yet growing Flutter project built around a list functionality to learn different techniques.
 
-## Getting Started
+## Changelog
+### 1.0.3
 
-This project is a starting point for a Flutter application.
+- ADDED Transparent status bar and white navigation bar.
+- IMPROVED First item of the list now has padding on top.
+- Updated Readme file.
 
-A few resources to get you started if this is your first Flutter project:
+### 1.0.2
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- ADDED [Details Page](https://www.notion.so/Details-Page-0235cfad3ad44f1b92bc53b00ad7b4af).
+- Rewrote logic of some components (simplified code and removed useless one).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 1.0.1
+
+- IMPROVED [Low Performance of Main List](https://www.notion.so/Low-Performance-of-Main-List-2e11cdb40d1945d2a89c4aa5bd992a10).
+- Rewrote logic of code components.
+- Cleaned up code.
+- Fixed version to 1.0.1 instead of previous 1.1.0.
+
+### 1.0.0
+
+- IMPLEMENTED [Main List Filled with Data](https://www.notion.so/Main-List-Filled-with-Data-7b2f07d72c4d4052b8cf769cdbf3b1f3).
+- Prepared classes for future functionality expansion.

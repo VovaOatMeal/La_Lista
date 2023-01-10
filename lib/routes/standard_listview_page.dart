@@ -40,8 +40,15 @@ class _StandardListViewPageState extends State<StandardListViewPage> {
       body: ListView.builder(
         itemCount: moreData.length,
         itemBuilder: (context, index) {
-          return StandardTile.tileBuilder(
-              moreData[index], _openDetails);
+          if (index == 0) {
+            return Padding(
+              padding: const EdgeInsets.only(
+                top: 8.0,
+              ),
+              child: StandardTile.tileBuilder(moreData[index], _openDetails),
+            );
+          }
+          return StandardTile.tileBuilder(moreData[index], _openDetails);
         },
       ),
     );
